@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity TAsk 7</title>
+</head>
+<body>
+    
+
+    <script>
+/** 
+Question : 1
+https://github.com/rvsp/typescript-oops/blob/master/Practice/Movie.md
+*/
+class Movie{
+    constructor(title,studio,rating="PG"){
+        this.title = title;
+        this.studio = studio;
+        this.rating = rating;
+    }
+    getPG(){
+       if(this.rating == "PG"){
+           return this.title;
+       }
+      
+       
+    }
+}
+
+const movie1 = new Movie("Casino Royale","Eon Productions","PG13");
+const movie2 = new Movie("Delta","Eon Productions","PG");
+const movie3 = new Movie("The Noon","Eon Productions");
+console.log("-------------- Question 1 --------------------");
+console.log(movie1.getPG());
+console.log(movie2.getPG());
+console.log(movie3.getPG());
+
+/**
+ * Question 2:
+ *  https://github.com/rvsp/typescript-oops/blob/master/Practice/class-circle.md
+ * 
+ * */
+
+ class Circle{
+     constructor(radius,colour){
+       this.radius = radius;
+       this.colour = colour;
+     }
+//      circle1(){
+//   return "circle() property invoked";
+//      }
+//      circle1(r){
+
+//      }
+//      circle1(r,c){
+
+//      }
+     getRadius(){
+        return   `Radius is ${this.radius}`;
+     }
+     setRadius(r){
+         this.radius = r;
+         return this.getRadius();
+     }
+     getColor(){
+        return   `Color is ${this.colour}`;
+     }
+     setColor(c){
+        this.colour = c;
+         return this.getColor();
+     }
+     toString(){
+
+     }
+     getArea(){
+// Area = pie*r*r
+     var pie = 3.14;
+     var area = pie*Math.pow(this.radius,2);
+     return `Area of radius is: ${area}`;
+     }
+     getCircumference(){
+//  C=2π(r)
+       var circum = 2*3.14*this.radius;
+       return `Circumference of radius is: ${circum}`;  
+     }
+ }
+
+var obj1 = new Circle(12,"red");
+
+console.log("----------------- Question 2 -----------------");
+console.log(obj1.getRadius());
+console.log(obj1.setRadius(6));
+console.log(obj1.getColor());
+console.log(obj1.setColor("Green"));
+console.log(obj1.getArea());
+console.log(obj1.getCircumference());
+
+/**
+ *  Question 3
+ * Write a “person” class to hold all the details.
+ * */
+
+class Person{
+     constructor(name,address,age,gender){
+         this.name = name;
+         this.address = address;
+         this.age = age;
+         this.gender = gender;
+     }
+     displayDetails(){
+  return `Name: ${this.name}, Address: ${this.address} Age: ${this.age} Gender: ${this.gender}`;
+     }
+}
+
+console.log("------------------- Question 3 -----------------------");
+var person1 = new Person("Varun","chennai",23,"male");
+var person2 = new Person("Arun","Bangalore",24,"male");
+console.log("Question: person class to hold all the details.");
+console.log(person1.displayDetails());
+console.log(person2.displayDetails());
+
+
+/**
+ *  Question
+ * write a class to calculate uber price.
+ * */
+
+ class Uber{
+     constructor(name,pickupPoint,dropPoint,distance,waitingMinute){
+         this.name = name;
+         this.pickupPoint = pickupPoint;
+         this.dropPoint = dropPoint;
+         this.distance = distance;
+         this.waitingMinute = waitingMinute;
+     }
+     getPrice(){
+        //  1km = 12rs
+         var kmsPrice = this.distance * 12;
+        
+     
+            if(this.waitingMinute > 1 && this.waitingMinute < 11){
+               kmsPrice = kmsPrice + 10;
+            }
+            else if(this.waitingMinute > 12 && this.waitingMinute < 31){
+                kmsPrice = kmsPrice + 35;
+            }
+            else if(this.waitingMinute == 0){
+                kmsPrice = kmsPrice;
+            }
+            else{
+                kmsPrice = kmsPrice+100;
+            }
+       
+    
+           
+         return `Customer Name :--> ${this.name}  The fare between ${this.pickupPoint} <====> ${this.dropPoint} is = ₹${kmsPrice}`;
+     }
+ }
+
+ console.log("------------------------- Question 4 ---------------------");
+ var customer1 = new Uber("vasanth","Vadapalani","Anna nager",12,22);
+ var customer2 = new Uber("Saravanan","Central","Anna nager",15,0);
+ var customer3 = new Uber("Ramesh","Vadapalani","Vandalur",22,22);
+ var customer4 = new Uber("Prakash","Vandalur","CMBT",32,0);
+ var customer5 = new Uber("Dilep","Vadapalani","Ashok Nager",5,5);
+ console.log("Question : Calculate uber price:");
+console.log(customer1.getPrice());
+console.log(customer2.getPrice());
+console.log(customer3.getPrice());
+console.log(customer4.getPrice());
+console.log(customer5.getPrice());
+    </script>
+</body>
+</html>
