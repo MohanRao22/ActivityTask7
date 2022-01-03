@@ -20,22 +20,34 @@ class Movie{
         this.studio = studio;
         this.rating = rating;
     }
-    getPG(){
-       if(this.rating == "PG"){
-           return this.title;
+    getPG(data){
+        let resultArr = [];
+        data.filter((val)=>{
+            if(val.rating === "PG"){
+            resultArr.push(val)
        }
+       
+        });
+      
+        return resultArr;
       
        
     }
+   
 }
 
 const movie1 = new Movie("Casino Royale","Eon Productions","PG13");
 const movie2 = new Movie("Delta","Eon Productions","PG");
 const movie3 = new Movie("The Noon","Eon Productions");
 console.log("-------------- Question 1 --------------------");
-console.log(movie1.getPG());
-console.log(movie2.getPG());
-console.log(movie3.getPG());
+let arrMovies = [movie1, movie2, movie3];
+// console.log(movie1.getPG());
+// console.log(movie2.getPG());
+// console.log(movie3.getPG());
+console.log(movie1.getPG(arrMovies));
+        
+        
+        
 
 /**
  * Question 2:
